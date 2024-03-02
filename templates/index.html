@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPP:Kolkata</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%; /* Adjusted to take full width */
+            height: auto; /* Adjusted to auto height */
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: center; /* Center align the form elements */
+        }
+        .form-group input[type="text"],
+        .form-group select {
+            width: 270px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .form-group .flex-item-left {
+            margin-right: 10px; /* Added some margin to separate elements */
+        }
+        .form-group .flex-item-right {
+            margin-left: 10px; /* Added some margin to separate elements */
+        }
+        .form-group .flex-item-left select,
+        .form-group .flex-item-right select {
+            width: 270px; /* Adjusted width to match text boxes */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        /* styles for the Predicted Property Price button and text box */
+        .form-group .predict-button,
+        .form-group .predicted-price {
+            width: 270px; /* Same width as other input elements */
+            height: 40px; /* Same height as other input elements */
+            margin-left: 20px; /* Adjust margin as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Property Price Prediction: Kolkata</h1>
+        <form action="/predict" method="POST">
+          <div class="form-group">
+            <div class="flex-item-left">
+                <input type="text" id="area1" name="area" placeholder="Area in sqft (200 to 9900)">
+            </div>
+            <div class="flex-item-left">
+                <input type="text" id="bedrooms1" name="bedrooms" placeholder="No of Bedrooms (1 to 9)">
+            </div>
+
+            <div class="flex-item-left">
+                <select id="location1" name="location">
+                    <option value="">Location</option>
+                    <option value="Baguiati">Baguiati</option>
+                    <option value="Barsat">Barsat</option>
+                    <option value="Behala">Behala</option>
+                    <option value="Bhadreswar">Bhadreswar</option>
+                    <option value="Chkravarti Para">Chkravarti Para</option>
+                    <option value="Dum Dum Park">Dum Dum Park</option>
+                    <option value="Dum Dum">Dum Dum</option>
+                    <option value="Garia">Garia</option>
+                    <option value="Gariahat">Gariahat</option>
+                    <option value="Hooghly Chinsurah">Hooghly Chinsurah</option>
+                    <option value="Hussainpur">Hussainpur</option>
+                    <option value="Joka">Joka</option>
+                    <option value="Keshtopur">Keshtopur</option>
+                    <option value="Konnagar">Konnagar</option>
+                    <option value="Kutighat">Kutighat</option>
+                    <option value="Lake Gardens">Lake Gardens</option>
+                    <option value="Madhyamgram">Madhyamgram</option>
+                    <option value="Madurdaha Hussainpur">Madurdaha Hussainpur</option>
+                    <option value="Mukundapur">Mukundapur</option>
+                    <option value="Narendrapur">Narendrapur</option>
+                    <option value="New Alipore">New Alipore</option>
+                    <option value="New Town">New Town</option>
+                    <option value="Rajarhat">Rajarhat</option>
+                    <option value="Santoshpur">Santoshpur</option>
+                    <option value="Sarsuna">Sarsuna</option>
+                    <option value="Sodepur">Sodepur</option>
+                    <option value="Sonarpur">Sonarpur</option>
+                    <option value="south dum dum">south dum dum</option>
+                    <option value="Tangra">Tangra</option>
+                    <option value="Tollygunge">Tollygunge</option>
+                    <option value="Ultadanga">Ultadanga</option>
+                    <option value="Uttarpara Kotrung">Uttarpara Kotrung</option> 
+                </select>
+          </div>
+        </div>
+        <div class="form-group">
+            <div class="flex-item-left">
+                <select id="club-house1" name="club-house">
+                    <option value="">Club House</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="flex-item-left">
+                <select id="rain-water-harvesting1" name="rain-water-harvesting">
+                    <option value="">Rain Water Harvesting</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="flex-item-left">
+                <select id="swimming-pool1" name="swimming-pool">
+                    <option value="">Swimming Pool</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="flex-item-left">
+                <select id="resale1" name="resale">
+                    <option value="">Resale</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <div class="flex-item-left">
+                <select id="Cafeteria1" name="Cafeteria">
+                    <option value="">Cafeteria</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="flex-item-left">
+                <select id="LiftAvailable1" name="LiftAvailable">
+                    <option value="">LiftAvailable</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="flex-item-left">
+                <select id="MaintenanceStaff1" name="MaintenanceStaff">
+                    <option value="">MaintenanceStaff</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="flex-item-left">
+                <select id="JoggingTrack1" name="JoggingTrack">
+                    <option value="">JoggingTrack</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="flex-item-left">
+                <select id="LandscapedGardens1" name="LandscapedGardens">
+                    <option value="">LandscapedGardens</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="flex-item-left">
+                <select id="VaastuCompliant1" name="VaastuCompliant">
+                    <option value="">VaastuCompliant</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="flex-item-left">
+                <select id="MultipurposeRoom1" name="MultipurposeRoom">
+                    <option value="">MultipurposeRoom</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="flex-item-left">
+                <select id="PowerBackup1" name="PowerBackup">
+                    <option value="">PowerBackup</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="flex-item-left">
+                <select id="IndoorGames1" name="IndoorGames">
+                    <option value="">IndoorGames</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="flex-item-left">
+                <select id="WashingMachine1" name="WashingMachine">
+                    <option value="">WashingMachine</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="flex-item-left">
+                <select id="CarParking1" name="CarParking">
+                    <option value="">CarParking</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="flex-item-left">
+                <select id="SportsFacility1" name="SportsFacility">
+                    <option value="">SportsFacility</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+          </div>
+
+         <div class="form-group">
+            <div class="flex-item-left">
+                <select id="Gymnasium1" name="Gymnasium">
+                    <option value="">Gymnasium</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+             </div>
+             <div class="flex-item-left">
+                <button type= "submit" class="predict-button">Predict Property Price</button>
+             </div>
+             <div class="flex-item-left">
+             <input type="text" class="predicted-price" readonly value="{{ predicted_price }}">
+             </div>
+         </div>
+      </form>
+    </div>
+ </body>
+</html>
